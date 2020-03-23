@@ -1,0 +1,54 @@
+<section class="stats">
+  <app-global-statistics></app-global-statistics>
+
+  <h2 class="stats__header">Countries Statistics</h2>
+  <div class="stats__searchWrapper">
+    <input
+      class="stats__searchWrapper__searcher"
+      [formControl]="searchCountry"
+      type="search"
+      placeholder="Input country name..."
+    />
+
+    <select
+      class="stats__searchWrapper__filter"
+      (change)="sortBy($event.target.value)"
+    >
+      <option>Sort By</option>
+      <option value="name">By Name</option>
+      <option value="confirmed">By Confirmed</option>
+      <option value="recovered">By Recovered</option>
+      <option value="deaths">By Deaths</option>
+    </select>
+  </div>
+
+  <section class="stats__wrapper stats__wrapper--countries">
+    <div
+      class="stats__wrapper__card stats__wrapper__card--country"
+      *ngFor="let country of filteredCountries"
+      routerLink="{{ country?.code }}"
+    >
+      <h3 class="stats__wrapper__card__name">
+        {{ country?.name }}
+        <h4 class="stats__wrapper__card__code">({{ country?.code }})</h4>
+      </h3>
+      <div class="stats__wrapper__card__stats">
+        <span
+          class="stats__wrapper__card__stats__value stats__wrapper__card__stats__value--confirmed"
+        >
+          {{ country?.confirmed }}
+        </span>
+        <span
+          class="stats__wrapper__card__stats__value stats__wrapper__card__stats__value--recovered"
+        >
+          {{ country?.recovered }}
+        </span>
+        <span
+          class="stats__wrapper__card__stats__value stats__wrapper__card__stats__value--deaths"
+        >
+          {{ country?.deaths }}
+        </span>
+      </div>
+    </div>
+  </section>
+</section>

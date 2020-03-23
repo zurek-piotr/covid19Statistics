@@ -1,0 +1,23 @@
+<section class="stats">
+  <h2 class="stats__header">Global Statistics</h2>
+  <section class="stats__wrapper stats__wrapper--global">
+    <div class="stats__wrapper__card stats__wrapper__card--confirmed">
+      <h3 class="stats__wrapper__card__header">Confirmed</h3>
+      <span class="stats__wrapper__card__value">{{
+        globalStatistics?.confirmed
+      }}</span>
+    </div>
+    <div class="stats__wrapper__card stats__wrapper__card--recovered">
+      <h3 class="stats__wrapper__card__header">Recovered</h3>
+      <span class="stats__wrapper__card__value">{{
+        globalStatistics?.recovered
+      }}</span>
+    </div>
+    <div class="stats__wrapper__card stats__wrapper__card--deaths">
+      <h3 class="stats__wrapper__card__header">Deaths</h3>
+      <span class="stats__wrapper__card__value">{{
+        globalStatistics?.deaths
+      }}</span>
+    </div>
+  </section>
+</section>

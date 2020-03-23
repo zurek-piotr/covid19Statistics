@@ -1,0 +1,16 @@
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    align-self: center;
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: 25px;
+  }
+  &__lastUpdate {
+    align-self: center;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+}
