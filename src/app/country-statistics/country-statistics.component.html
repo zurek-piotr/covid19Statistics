@@ -1,10 +1,10 @@
 <section class="stats">
-  <h2 class="stats__header"></h2>
+  <h2 class="stats__header">
+    {{ countryStatistic?.name }} ({{ countryStatistic?.code }})
+  </h2>
   <section class="stats__wrapper stats__wrapper--global">
     <div class="stats__wrapper__card stats__wrapper__card--confirmed">
-      <h3 class="stats__wrapper__card__header">
-        {{ countryStatistic?.name }} ({{ countryStatistic?.code }})
-      </h3>
+      <h3 class="stats__wrapper__card__header">Confirmed</h3>
       <span class="stats__wrapper__card__value">{{
         countryStatistic?.confirmed
       }}</span>
