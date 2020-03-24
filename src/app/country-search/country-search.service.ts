@@ -63,13 +63,14 @@ export class CountrySearchService {
   }
   getCountries() {
     return this.http.get(`${this.API}/countries`).subscribe((data: any) => {
-      let _countries = Object.entries(data.countries);
+      let _countries: any = Object.entries(data.countries);
       for (let country of _countries) {
         this.countries.push({
-          name: `${country[0]}`,
-          code: `${country[1]}`,
+          name: `${country[1].name}`,
+          code: `${country[1].iso2}`,
         });
       }
+
       this.countriesStream$.next(this.countries);
     });
   }
@@ -82,7 +83,9 @@ export class CountrySearchService {
   getCountryStatistic(countryCode) {
     return this.http.get(`${this.API}/countries`).subscribe((data: any) => {
       let _countries = Object.entries(data.countries);
-      let name: any = _countries.find(country => country[1] === countryCode);
+      let name: any = _countries.find(
+        (country: any) => country[1].iso2 === countryCode,
+      );
       if (name === undefined) this.router.navigate(['']);
       else {
         name = name.slice(0, 1);
