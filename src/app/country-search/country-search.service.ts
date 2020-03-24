@@ -88,7 +88,7 @@ export class CountrySearchService {
       );
       if (name === undefined) this.router.navigate(['']);
       else {
-        name = name.slice(0, 1);
+        name = name[1].name;
       }
       this.http.get(`${this.API}/countries/${countryCode}`).subscribe(
         (data: any) => {
