@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private countrySearchService: CountrySearchService) {}
 
   ngOnInit() {
-    this.countrySearchService.getLastUpdateStream().subscribe(lastUpdate => {
+    this.countrySearchService.getLastUpdateStream().subscribe((lastUpdate) => {
       this.lastUpdate = lastUpdate;
     });
   }
